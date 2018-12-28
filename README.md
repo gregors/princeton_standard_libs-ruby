@@ -28,6 +28,24 @@ TODO: Write usage instructions here
 
 ## Development
 
+* [ ]	StdIn.java 	read numbers and text from standard input
+* [ ] StdOut.java 	write numbers and text to standard output
+* [ ] StdDraw.java 	draw geometric shapes in a window
+* [ ] StdAudio.java 	create, play, and manipulate sound
+* [ ] StdRandom.java 	generate random numbers
+* [ ] StdStats.java 	compute statistics
+* [ ] StdArrayIO.java 	read and write 1D and 2D arrays
+* [ ] In.java 	read numbers and text from files and URLs
+* [ ] Out.java 	write numbers and text to files
+* [ ] Draw.java 	draw geometric shapes
+* [ ] Picture.java 	process color images
+* [ ] GrayscalePicture.java 	process grayscale images
+* [ ] Stopwatch.java 	measure running time
+* [ ] BinaryStdIn.java 	read bits from standard input
+* [ ] BinaryStdOut.java 	write bits to standard output
+* [ ] BinaryIn.java 	read bits from files and URLs
+* [ ] BinaryOut.java 	write bits to files
+
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
