@@ -25,6 +25,25 @@ class StdRandom
     uniform < p
   end
 
+  # * Returns a random real number from a standard Gaussian distribution.
+  def self.gaussian(mu=nil, sigma=nil)
+    return mu + sigma * gaussian if mu && sigma
+
+    #x use the polar form of the Box-Muller transform
+    r, x, y = nil
+    loop do
+      x = uniform(-1.0, 1.0)
+      y = uniform(-1.0, 1.0)
+      r = (x*x) + (y*y)
+      break unless r >= 1 || r == 0
+    end
+
+    # Remark:  y * Math.sqrt(-2 * Math.log(r) / r)
+    # is an independent random gaussian
+    input = -2 * (Math.log(r) / r)
+    x * Math.sqrt(input)
+  end
+
   private
 
   def self.uniform_int(n)
