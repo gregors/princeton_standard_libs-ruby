@@ -95,6 +95,10 @@ class StdRandom
     ((1 - uniform) ** (-1.0/alpha)) - 1.0
   end
 
+  # return a random real number from the Cauchy distribution.
+  def self.cauchy
+    Math.tan(Math::PI * (uniform - 0.5))
+  end
 
   private
 
