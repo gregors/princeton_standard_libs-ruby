@@ -18,6 +18,13 @@ class StdRandom
     end
   end
 
+  # Returns a random boolean from a Bernoulli distribution with success
+  # probability p
+  def self.bernoulli(p=0.5)
+    throw "probability p must be between 0.0 and 1.0: #{p}" if !(p >= 0.0 && p <= 1.0)
+    uniform < p
+  end
+
   private
 
   def self.uniform_int(n)
