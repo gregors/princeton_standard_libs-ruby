@@ -58,6 +58,28 @@ class StdRandom
     (Math.log(uniform) / Math.log(1.0 - p)).ceil
   end
 
+  # Returns a random integer from a Poisson distribution with mean & lambda.
+  #
+  # param  lambda the mean of the Poisson distribution
+  # return a random integer from a Poisson distribution with mean lambda
+  # throws Exception unless lambda > 0.0 and not infinite
+
+  def self.poisson(lmbda)
+    throw "lambda must be positive: #{lmbda}" if !(lmbda > 0.0)
+    throw "lambda must not be infinite: #{lmbda}" if lmbda == Float::INFINITY
+    # using algorithm given by Knuth
+    # see http://en.wikipedia.org/wiki/Poisson_distribution
+    k = 0
+    p = 1.0
+    expLambda = Math.exp(-lmbda)
+    loop do
+      k += 1
+      p *= uniform
+      break unless p >= expLambda
+    end
+    k-1
+  end
+
   private
 
   def self.uniform_int(n)
