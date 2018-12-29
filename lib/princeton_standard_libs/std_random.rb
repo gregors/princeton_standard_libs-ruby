@@ -44,6 +44,20 @@ class StdRandom
     x * Math.sqrt(input)
   end
 
+  #  Returns a random integer from a geometric distribution with success
+  #  probability p.
+  #  The integer represents the number of independent trials
+  #  before the first success.
+  #
+  #  throws IllegalArgumentException unless p >= 0.0 and p <= 1.0
+  def self.geometric(p)
+    throw "probability p must be greater than 0: #{p}" if !(p >= 0)
+    throw "probability p must not be larger than 1: #{p}" if !(p <= 1.0)
+
+    # using algorithm given by Knuth
+    (Math.log(uniform) / Math.log(1.0 - p)).ceil
+  end
+
   private
 
   def self.uniform_int(n)
