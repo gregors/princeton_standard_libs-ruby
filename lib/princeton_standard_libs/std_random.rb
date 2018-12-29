@@ -80,6 +80,22 @@ class StdRandom
     k-1
   end
 
+  # Returns a random real number from a Pareto distribution with
+  # shape parameter alpha
+  #
+  # param  alpha shape parameter
+  # return a random real number from a Pareto distribution with shape
+  #         parameter alpha
+  # throws Exception unless alpha > 0.0
+
+  def self.pareto(alpha=nil)
+    return pareto(1.0) if alpha.nil?
+
+    throw "alpha must be positive: #{alpha}" if !(alpha > 0.0)
+    ((1 - uniform) ** (-1.0/alpha)) - 1.0
+  end
+
+
   private
 
   def self.uniform_int(n)
