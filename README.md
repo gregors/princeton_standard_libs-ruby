@@ -1,8 +1,8 @@
 # Princeton Standard Libs
 
-I was going through the [Algorithms 4th edition](https://algs4.cs.princeton.edu/home/) and wanted to write the algorithms in ruby instead of the default java. The book uses the [Princeton Standard Libraries](https://introcs.cs.princeton.edu/java/stdlib/) to help clarify the code. 
+I was going through the [Algorithms 4th edition](https://algs4.cs.princeton.edu/home/) and wanted to write the algorithms in ruby instead of the default java. The book uses the [Princeton Standard Libraries](https://introcs.cs.princeton.edu/java/stdlib/) to help clarify the code. This is a pure ruby port of that library.
 
-This is a pure ruby port of that library. I plan to include everything except for the Standard Draw library - due to the complexity I am breaking that out into it's own gem [Standard Draw TK](https://github.com/gregors/standard_draw_tk) which uses Tck/Tk for the gui layer. I may add other toolkits in the future. 
+I plan to include everything except for the Standard Draw library - due to the complexity I am breaking that out into it's own gem [Standard Draw TK](https://github.com/gregors/standard_draw_tk) which uses Tck/Tk for the gui layer. I may add other toolkits in the future. 
 
 Until this port is complete - For those willing to use Jruby can make use of the [jruby wrapper gem](https://rubygems.org/gems/princeton_standard_libraries) that lets you call the original java code with minimal pain.
 
@@ -30,7 +30,7 @@ TODO: Write usage instructions here
 
 * [ ]	StdIn.java 	read numbers and text from standard input
 * [ ] StdOut.java 	write numbers and text to standard output
-* [ ] StdDraw.java 	draw geometric shapes in a window
+* [X] StdDraw.java 	draw geometric shapes in a window -- see [Standard Draw TK Gem](https://github.com/gregors/standard_draw_tk)
 * [ ] StdAudio.java 	create, play, and manipulate sound
 * [ ] StdRandom.java 	generate random numbers
 * [ ] StdStats.java 	compute statistics
